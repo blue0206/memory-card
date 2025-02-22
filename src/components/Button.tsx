@@ -1,11 +1,11 @@
 import { ReactElement } from 'react';
 
 type ButtonProps = {
-    children: ReactElement | string;
+    children: ReactElement | ReactElement[] | string;
     type?: "submit" | "reset" | "button";
     className?: string;
     id?: string;
-    onClick?: () => React.MouseEventHandler<HTMLButtonElement> | void;
+    onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 export default function Button({
