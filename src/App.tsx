@@ -1,5 +1,5 @@
 import { useState, ReactElement, useEffect } from "react";
-import { Button } from "./components";
+import { Button, Game } from "./components";
 
 function App(): ReactElement {
 
@@ -30,6 +30,9 @@ function App(): ReactElement {
               <span></span>
             </div>
           </div>
+        </section>
+        <section>
+            <Game />
         </section>
       </main>
     </>
