@@ -1,0 +1,32 @@
+.gamecard {
+    height: 400px;
+    aspect-ratio: 1/1.4;
+
+    display: grid;
+    grid-template-rows: 1fr 0.25fr;
+
+    background-color: rgb(141, 180, 199);
+    border-radius: 32px;
+    background-blend-mode: lighten;
+    box-shadow: inset -1px -1px 0 black;
+    background-image: radial-gradient(circle at 50% 20%, transparent 0%, transparent 80%, rgba(255, 255, 255, .1) 80%, rgba(255, 255, 255, .1) 100%);
+    background-size: 100% 200%;
+    background-position: 0% 100%;
+    
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.gamecard:hover {
+    transform: scale(1.05);
+    transition: transform 0.1s ease-in-out;
+    box-shadow: inset -6px -6px 0 black;
+    transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+    background-image: linear-gradient(to bottom right, #f0f0f0, #ebebeb);
+    background-color: rgb(255, 255, 255);
+}
+
+.image {
+    height: 100%;
+    width: 100%;
+}
