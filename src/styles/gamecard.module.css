@@ -19,7 +19,6 @@
 
 .gamecard:hover {
     transform: scale(1.05);
-    transition: transform 0.1s ease-in-out;
     box-shadow: inset -6px -6px 0 black;
     transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
     background-image: linear-gradient(to bottom right, #f0f0f0, #ebebeb);
