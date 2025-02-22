@@ -2,7 +2,7 @@ import { useState, ReactElement } from "react";
 import { Button, Game } from "./components";
 import { Mode } from "./types";
 import styles from "./styles/app.module.css";
-import { Analytics } from "@vercel/analytics/next";
+import { Analytics } from "@vercel/analytics/react";
 
 function App(): ReactElement {
   const [mode, setMode] = useState<Mode>(Mode.easy);
