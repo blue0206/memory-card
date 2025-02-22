@@ -42,7 +42,6 @@ export default function Game({
                         name: data.name,
                         clicked: false
                     }
-                    console.log(newPokemon);
                     setCards(prevCards => [...prevCards, newPokemon]);
                 })
                 .catch(err => console.log(err));
@@ -58,7 +57,6 @@ export default function Game({
                         name: data.name,
                         clicked: false
                     }
-                    console.log(newPokemon);
                     setCards(prevCards => [...prevCards, newPokemon]);
                 }
             })
