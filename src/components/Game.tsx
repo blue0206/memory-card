@@ -84,9 +84,9 @@ export default function Game({
                 card.clicked = true;
                 setScore(score + 1);
                 if (score+1 > highScore) {
+                    if (score+1 === 16) executeConfetti();
                     setHighScore(score+1);
                 }
-                if (highScore+1 === 16) executeConfetti();
             }
         }
     }
