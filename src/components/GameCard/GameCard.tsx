@@ -1,17 +1,23 @@
 import { ReactElement } from "react";
+import { Button } from "../";
 
 type GameCardProps = {
+    id: string;
     src: string;
     name: string;
+    onClick: React.MouseEventHandler<HTMLButtonElement>;
 }
 
-export default function GameCard({ src, name }: GameCardProps): ReactElement {
+export default function GameCard(props: GameCardProps): ReactElement {
     return (
-        <div>
+        <Button
+            id={props.id} 
+            onClick={props.onClick}
+        >
             <div>
-                <img src={src} alt={`An image of ${name}`} />
+                <img src={props.src} alt={`An image of ${props.name}`} />
             </div>
-            <div>{name}</div>
-        </div>
+            <div>{props.name}</div>
+        </Button>
     )
 }
