@@ -7,11 +7,17 @@ import { v4 as uuidv4 } from "uuid";
 type GameProps = {
     mode: string;
     score: number;
+    setScore: React.Dispatch<React.SetStateAction<number>>;
+    highScore: number;
+    setHighScore: React.Dispatch<React.SetStateAction<number>>;
 }
 
 export default function Game({ 
     mode, 
-    score 
+    score,
+    setScore,
+    highScore,
+    setHighScore
 }: GameProps): ReactElement {
     const [cards, setCards] = useState<PokemonCard[]>([]);
 
@@ -68,12 +74,34 @@ export default function Game({
         })
     }, [score]);
 
+    function handleClick(e: React.MouseEvent<HTMLButtonElement>) {
+        const card = cards.find(card => card.id === e.currentTarget.id);
+        if (card) {
+            if (card.clicked) {
+                setScore(0);
+                cards.forEach(card => card.clicked = false);
+            } else {
+                card.clicked = true;
+                setScore(score + 1);
+                if (score+1 > highScore) {
+                    setHighScore(score+1);
+                }
+            }
+        }
+    }
+
     return (
         <div>
             {
                 cards.length > 0 && cards.map(card => {
                     return (
-                        <GameCard />
+                        <GameCard 
+                            key={card.id} 
+                            id={card.id} 
+                            src={card.src} 
+                            name={card.name} 
+                            onClick={handleClick}
+                        />
                     );
                 })
             }
