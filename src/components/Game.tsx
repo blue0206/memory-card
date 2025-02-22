@@ -4,6 +4,7 @@ import { Mode } from "../types";
 import { GameCard as PokemonCard } from "../interfaces";
 import { GameCard } from ".";
 import { v4 as uuidv4 } from "uuid";
+import executeConfetti from "../utils/confetti";
 
 type GameProps = {
     mode: string;
@@ -85,6 +86,7 @@ export default function Game({
                 if (score+1 > highScore) {
                     setHighScore(score+1);
                 }
+                if (highScore+1 === 16) executeConfetti();
             }
         }
     }
