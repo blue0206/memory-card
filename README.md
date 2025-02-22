@@ -6,7 +6,7 @@ This is a simple memory card game built with React and TypeScript!
 
 ## Features
 
-- **Pokémon Theme:** Enjoy matching your favorite Pokémon!
+- **Pokémon Theme:** Enjoy your favorite Pokémon!
 - **Two Game Modes:** Choose between "Normal" mode and the more challenging "A Plethora of Pikachu!" mode.
 - **Score Tracking:**  See your current score and high score as you play.
 
