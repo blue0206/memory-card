@@ -1,6 +1,7 @@
 import { ReactElement, useState, useEffect } from "react";
 import { Mode } from "../types";
 import { GameCard as PokemonCard } from "../interfaces";
+import { GameCard } from ".";
 
 type GameProps = {
     mode: string;
@@ -64,6 +65,13 @@ export default function Game({
 
     return (
         <div>
+            {
+                cards.length > 0 && cards.map(card => {
+                    return (
+                        <GameCard />
+                    );
+                })
+            }
         </div>
     )
 }
