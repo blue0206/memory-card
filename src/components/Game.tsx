@@ -1,4 +1,5 @@
 import { ReactElement, useState, useEffect } from "react";
+import styles from "../styles/game.module.css"
 import { Mode } from "../types";
 import { GameCard as PokemonCard } from "../interfaces";
 import { GameCard } from ".";
@@ -91,7 +92,7 @@ export default function Game({
     }
 
     return (
-        <div>
+        <div className={styles.game}>
             {
                 cards.length > 0 && cards.map(card => {
                     return (
