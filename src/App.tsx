@@ -1,9 +1,11 @@
-import { useState, ReactElement, useEffect } from "react";
+import { useState, ReactElement } from "react";
 import { Button, Game } from "./components";
 import { Mode } from "./types";
 
 function App(): ReactElement {
   const [mode, setMode] = useState<Mode>(Mode.easy);
+  const [score, setScore] = useState(0);
+  const [highScore, setHighScore] = useState(0);
 
   return (
     <>
@@ -29,17 +31,21 @@ function App(): ReactElement {
           <div>
             <div>
               <span>Score: </span>
-              <span></span>
+              <span>{score}</span>
             </div>
             <div>
               <span>High Score: </span>
-              <span></span>
+              <span>{highScore}</span>
             </div>
           </div>
         </section>
         <section>
             <Game 
-              mode={mode}
+              mode={mode} 
+              setScore={setScore}
+              score={score}
+              highScore={highScore}
+              setHighScore={setHighScore} 
             />
         </section>
       </main>
