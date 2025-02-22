@@ -1,6 +1,7 @@
 import { useState, ReactElement } from "react";
 import { Button, Game } from "./components";
 import { Mode } from "./types";
+import styles from "./styles/app.module.css";
 
 function App(): ReactElement {
   const [mode, setMode] = useState<Mode>(Mode.easy);
@@ -8,8 +9,10 @@ function App(): ReactElement {
   const [highScore, setHighScore] = useState(0);
 
   return (
-    <>
-      <header>Pocket Monsters Memory Game!</header>
+    <div className={styles.top}>
+      <header className={styles.header}>
+        <h1>Pocket Monsters Memory Game!</h1>
+      </header>
       <main>
         <section>
           <div>
@@ -49,7 +52,7 @@ function App(): ReactElement {
             />
         </section>
       </main>
-    </>
+    </div>
   )
 }
 
