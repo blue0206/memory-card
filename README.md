@@ -63,6 +63,12 @@ To preview the production build locally:
 npm run preview
 ```
 
+## How To Play
+- Get points by clicking on a pokémon but don't click any more than once!
+- The game has two modes: Normal and A Plethora of Pikachu!
+- The Normal mode is easy to play but the A Plethora of Pikachu! mode is a challenge!
+- Clicking on a pokémon twice will result in a loss and your points will be reset!
+
 ## Project Structure
 
 ```
