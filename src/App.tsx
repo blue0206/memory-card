@@ -11,27 +11,29 @@ function App(): ReactElement {
   return (
     <div className={styles.top}>
       <header className={styles.header}>
-        <h1>Pocket Monsters Memory Game!</h1>
+        <h1 className={styles.heading}>Pocket Monsters Memory Game!</h1>
       </header>
-      <main>
-        <section>
-          <div>
-            Get points by clicking on a pokémon but don't click on any more than once!
+      <main className={styles.main}>
+        <section className={styles.sectionOne}>
+          <div className={styles.infoText}>
+            Get points by clicking on a pokémon but don't click any more than once!
           </div>
-          <div>
+          <div className={styles.mode}>
             <div>SET MODE: </div>
             <Button
+              className={styles.button} 
               onClick={() => setMode(Mode.easy)}
             >
               Normal
             </Button>
             <Button
+              className={styles.button} 
               onClick={() => setMode(Mode.difficult)}
             >
               A Plethora of Pikachu!
             </Button>
           </div>
-          <div>
+          <div className={styles.scoreboard}>
             <div>
               <span>Score: </span>
               <span>{score}</span>
