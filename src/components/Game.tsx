@@ -63,7 +63,8 @@ export default function Game({
             })
             .catch(err => console.log(err));
         }
-    }, [mode]);
+        setScore(0);
+    }, [mode, setScore]);
 
     // Shuffle cards on score change.
     useEffect(() => {
