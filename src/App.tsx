@@ -20,6 +20,16 @@ function App(): ReactElement {
               A Plethora of Pikachu!
             </Button>
           </div>
+          <div>
+            <div>
+              <span>Score: </span>
+              <span></span>
+            </div>
+            <div>
+              <span>High Score: </span>
+              <span></span>
+            </div>
+          </div>
         </section>
       </main>
     </>
