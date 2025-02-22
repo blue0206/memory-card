@@ -2,6 +2,8 @@
 
 This is a simple memory card game built with React and TypeScript where you match pairs of Pokémon! Test your memory and see how quickly you can find all the matches.
 
+[Live Preview](https://memory-card-sooty-ten.vercel.app/)
+
 ## Features
 
 - **Pokémon Theme:** Enjoy matching your favorite Pokémon!
