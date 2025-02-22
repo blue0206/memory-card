@@ -1,4 +1,5 @@
 import { ReactElement } from "react";
+import styles from "../../styles/gamecard.module.css";
 import { Button } from "../";
 
 type GameCardProps = {
@@ -8,16 +9,21 @@ type GameCardProps = {
     onClick: React.MouseEventHandler<HTMLButtonElement>;
 }
 
+function toTitleCase(name: string) {
+    return name[0].toUpperCase() + name.slice(1);
+}
+
 export default function GameCard(props: GameCardProps): ReactElement {
     return (
         <Button
+            className={styles.gamecard}
             id={props.id} 
             onClick={props.onClick}
         >
             <div>
-                <img src={props.src} alt={`An image of ${props.name}`} />
+                <img className={styles.image} src={props.src} alt={`An image of ${props.name}`} />
             </div>
-            <div>{props.name}</div>
+            <div>{toTitleCase(props.name)}</div>
         </Button>
     )
 }
