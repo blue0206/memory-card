@@ -2,6 +2,7 @@ import { ReactElement, useState, useEffect } from "react";
 import { Mode } from "../types";
 import { GameCard as PokemonCard } from "../interfaces";
 import { GameCard } from ".";
+import { v4 as uuidv4 } from "uuid";
 
 type GameProps = {
     mode: string;
@@ -13,7 +14,7 @@ export default function Game({
     score 
 }: GameProps): ReactElement {
     const [cards, setCards] = useState<PokemonCard[]>([]);
-    
+
     // Fetch images on mode change.
     useEffect(() => {
         const pokemon: readonly string[] = [
@@ -28,9 +29,11 @@ export default function Game({
                 fetch(`https://pokeapi.co/api/v2/pokemon/${name}/`)
                 .then(res => res.json())
                 .then(data => {
-                    const newPokemon = {
+                    const newPokemon: PokemonCard = {
+                        id: uuidv4(),
                         src: data.sprites.front_default,
-                        name: data.name
+                        name: data.name,
+                        clicked: false
                     }
                     console.log(newPokemon);
                     setCards(prevCards => [...prevCards, newPokemon]);
@@ -42,9 +45,11 @@ export default function Game({
             .then(res => res.json())
             .then(data => {
                 for (let i=0; i<16; i++) {
-                    const newPokemon = {
+                    const newPokemon: PokemonCard = {
+                        id: uuidv4(),
                         src: data.sprites.front_default,
-                        name: data.name
+                        name: data.name,
+                        clicked: false
                     }
                     console.log(newPokemon);
                     setCards(prevCards => [...prevCards, newPokemon]);
