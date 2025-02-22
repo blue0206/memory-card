@@ -1,6 +1,6 @@
 # Memory Card: A Pokémon Game using TypeScript + React
 
-This is a simple memory card game built with React and TypeScript where you match pairs of Pokémon! Test your memory and see how quickly you can find all the matches.
+This is a simple memory card game built with React and TypeScript!
 
 [Live Preview](https://memory-card-sooty-ten.vercel.app/)
 
