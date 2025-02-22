@@ -1,7 +1,9 @@
 import { useState, ReactElement, useEffect } from "react";
 import { Button, Game } from "./components";
+import { Mode } from "./types";
 
 function App(): ReactElement {
+  const [mode, setMode] = useState<Mode>(Mode.easy);
 
   return (
     <>
@@ -13,10 +15,14 @@ function App(): ReactElement {
           </div>
           <div>
             <div>SET MODE: </div>
-            <Button>
+            <Button
+              onClick={() => setMode(Mode.easy)}
+            >
               Normal
             </Button>
-            <Button>
+            <Button
+              onClick={() => setMode(Mode.difficult)}
+            >
               A Plethora of Pikachu!
             </Button>
           </div>
@@ -32,7 +38,9 @@ function App(): ReactElement {
           </div>
         </section>
         <section>
-            <Game />
+            <Game 
+              mode={mode}
+            />
         </section>
       </main>
     </>
